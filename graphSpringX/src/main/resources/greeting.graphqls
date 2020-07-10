@@ -1,0 +1,31 @@
+type Greeting {
+  id: ID!
+  message: String!
+}
+
+type Game {
+ id: ID!
+ name: String
+ cost: Int
+
+}
+
+type GameDB {
+ id: ID!
+ name: String
+ cost: Float
+ category:String
+}
+
+type Query {
+  getGreeting(id: ID!): Greeting
+  getGame(id: ID!): Game
+  findAllGamesDB: [GameDB]!
+}
+
+type Mutation {
+  newGreeting(message: String!): Greeting!
+  newGame(name: String!, cost: Int): Game!
+  createGameDB(name:String!, cost:Float, category:String): GameDB!
+  updateGameDB( id:ID!, name : String , cost : Float  ,category : String ): GameDB!
+}
